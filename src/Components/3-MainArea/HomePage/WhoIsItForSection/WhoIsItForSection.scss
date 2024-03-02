@@ -1,1 +1,46 @@
-.WhoIsItForSection {}
+.WhoIsItForSection {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+
+    >.right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+
+        img {
+            height: calc(100% - 65px);
+            width: 100%;
+            margin-right: -200px;
+            overflow-x: hidden;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+    }
+
+    >.left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        p {
+            margin: 10px 0px;
+            font-size: 1.3rem;
+
+            span {
+                &.italic {
+                    font-style: italic;
+                }
+
+                &.bold {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
