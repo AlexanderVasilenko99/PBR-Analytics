@@ -1,5 +1,5 @@
 .HowItWorksSection {
-    min-height: 100vh;
+    height: 100%;
     display: grid;
     grid-template-columns: 3fr 2fr;
 
@@ -7,10 +7,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
 
         img {
-            height: calc(100% - 65px);
+            height: calc(100vh - 65px);
             width: 100%;
             margin-left: -200px;
             overflow-x: hidden;

@@ -1,5 +1,5 @@
 .IntroSection {
-    min-height: 100vh;
+    height: calc(100vh - 130px);
     display: grid;
     grid-template-columns: 3fr 2fr;
 
@@ -10,7 +10,7 @@
 
         img {
             width: 600px;
-            padding-bottom: 15vh;
+            padding-bottom: 5vh;
         }
     }
 
@@ -21,6 +21,7 @@
         align-items: flex-start;
 
         h1 {
+            padding-top: 100px;
             margin: 0;
             font-size: 2rem;
         }

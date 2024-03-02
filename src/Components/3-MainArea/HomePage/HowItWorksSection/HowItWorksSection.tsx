@@ -7,7 +7,7 @@ function HowItWorksSection(): JSX.Element {
                 <img src={image} alt="PBR-logo" />
             </div>
             <div className="right">
-                <h1>How Do We Achieve that goal?</h1>
+                <h1>How Do We Achieve That Goal?</h1>
                 <p>When a business is looking to expand by opening a new branch, choosing the right location is crucial to guarantee
                     maximizing profit margins.
                 </p>
