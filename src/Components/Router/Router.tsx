@@ -14,6 +14,7 @@ function Router(): JSX.Element {
                 <Route path={appConfig.contactRoute} element={<ContactPage />}></Route>
 
                 {/* Default Routes */}
+                <Route path="" element={<Navigate to={appConfig.homeRoute} />} />
                 <Route path="/" element={<Navigate to={appConfig.homeRoute} />} />
                 <Route path="/PBR-Analytics/" element={<Navigate to={appConfig.homeRoute} />} />
                 {/* <Route path="*" element={<PageNotFound />} /> */}
