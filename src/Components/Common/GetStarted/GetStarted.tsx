@@ -4,7 +4,7 @@ import appConfig from "../../../AppConfig";
 
 function GetStarted(): JSX.Element {
     return (
-        <NavLink to={appConfig.homeRoute} className="GetStarted">
+        <NavLink to={appConfig.getStartedRoute} className="GetStarted">
             Get Started!
         </NavLink>
     );
