@@ -1,5 +1,5 @@
 class AppConfig {
-    public readonly homeRoute = '/'
+    public readonly homeRoute = '/PBR-Analytics/'
     public readonly contactRoute = '/contact'
     public readonly aboutRoute = '/about'
 }
