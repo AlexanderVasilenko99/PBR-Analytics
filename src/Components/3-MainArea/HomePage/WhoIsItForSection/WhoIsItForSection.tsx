@@ -1,5 +1,5 @@
 import "./WhoIsItForSection.scss";
-import image from '../../../../assets/images/background.png';
+import image from '../../../../assets/images/b4.png';
 function WhoIsItForSection(): JSX.Element {
     return (
         <div className="WhoIsItForSection">
@@ -11,7 +11,7 @@ function WhoIsItForSection(): JSX.Element {
                     location.
                 </p>
                 <p>
-                    Albeit, the service is free for use, so if you are a statistics geek,  
+                    Albeit, if you are a statistics geek, try it out! its free!
                 </p>
             </div>
             <div className="right">

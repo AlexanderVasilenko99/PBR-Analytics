@@ -1,5 +1,5 @@
 import "./HowItWorksSection.scss";
-import image from '../../../../assets/images/background.png';
+import image from '../../../../assets/images/b7.png';
 function HowItWorksSection(): JSX.Element {
     return (
         <div className="HowItWorksSection">

@@ -1,5 +1,5 @@
 import "./IntroSection.scss";
-import logo from '../../../../assets/images/pbr-logo2.png';
+import logo from '../../../../assets/images/pbr-logo-xl.png';
 function IntroSection(): JSX.Element {
     return (
         <div className="IntroSection">
