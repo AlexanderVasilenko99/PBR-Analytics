@@ -1,7 +1,7 @@
 class AppConfig {
-    public readonly homeRoute = '/PBR-Analytics/'
-    public readonly contactRoute = '/contact'
-    public readonly aboutRoute = '/about'
+    public readonly homeRoute = '/PBR-Analytics';
+    public readonly contactRoute = this.homeRoute + '/contact';
+    public readonly aboutRoute = this.homeRoute + '/about';
 }
 const appConfig = new AppConfig();
 export default appConfig;
