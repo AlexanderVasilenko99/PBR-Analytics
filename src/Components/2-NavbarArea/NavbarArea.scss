@@ -1,0 +1,50 @@
+.NavbarArea {
+    background-color: #fff;
+    border-bottom: 1px solid hsla(0, 0%, 74%, .5);
+    height: 65px;
+    left: 0;
+    padding-bottom: 12px;
+    padding-top: 10px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    padding: 0px 100px;
+
+    li {
+        box-sizing: border-box;
+        width: 100px;
+        transition: 200ms;
+
+        a {
+            text-decoration: none;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #434342;
+            height: 100%;
+            padding: 0px 20px;
+        }
+
+        &.logo {
+            margin-right: auto;
+
+            a {
+                padding: 0;
+            }
+
+            img {
+                width: 100px;
+            }
+        }
+
+        &:hover {
+            font-weight: 500;
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.FooterArea {
+	padding: 0px 100px;
+	height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #E0E0E0;
+
+	img {
+		width: 90px;
+		margin-right: auto;
+		position: absolute;
+		left: 100px;
+	}
+}
