@@ -11,6 +11,7 @@ function IntroSection(): JSX.Element {
                 <h1>Who are we?</h1>
                 <p><span className="italic bold">PBR Analytics©</span> is a project by Alexander Vasilenko designed to help business owners looking to expand
                     theirs operations in new locations and assist aspiring entrepreneurs when before launching.</p>
+                {/* <div><GetStarted /></div> */}
                 <GetStarted />
             </div>
         </div>
