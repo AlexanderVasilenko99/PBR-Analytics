@@ -1,5 +1,6 @@
 import "./WhoIsItForSection.scss";
 import image from '../../../../assets/images/b4.png';
+import GetStarted from "../../../Common/GetStarted/GetStarted";
 function WhoIsItForSection(): JSX.Element {
     return (
         <div className="WhoIsItForSection">
@@ -13,6 +14,9 @@ function WhoIsItForSection(): JSX.Element {
                 <p>
                     Albeit, if you are a statistics geek, try it out! its free!
                 </p>
+                <div className="button-container">
+                    <GetStarted />
+                </div>
             </div>
             <div className="right">
                 <img src={image} alt="PBR-logo" />
