@@ -1,4 +1,39 @@
 .GetStartedPage {
 	height: 100%;
 	background-color: #E0E0E0;
+
+	section {
+		border-bottom: 3px solid gray;
+		scroll-margin-top: 100px;
+
+		h1 {
+			margin: 40px 0px;
+		}
+	}
+
+	.intro-section {
+		height: 200px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.most-popular {
+		.display-most-popular {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+
+			span {
+				//replace later with actual component	
+				padding: 30px 40px;
+				margin: 0px 0px 40px;
+				background-color: red;
+			}
+		}
+	}
+
+	.result-sections {
+
+	}
 }
