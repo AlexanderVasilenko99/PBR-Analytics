@@ -37,6 +37,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 // };
 function GetStartedPage(): JSX.Element {
     const [settlements, setSettlements] = useState<SettlementModel[]>([]);
+    const [singleSettlement, setSingleSettlement] = useState<SettlementModel>();
     const [collapse, setCollapse] = useState<boolean>(false);
     const [residents, setResidents] = useState<string[]>([]);
     const [cityTitle, setCityTitle] = useState<string>();
@@ -70,22 +71,7 @@ function GetStartedPage(): JSX.Element {
     }
     useEffect(() => {
         settlementServices.getAllSettlements()
-            .then((s: SettlementModel[]) => {
-                console.log(s)
-                setSettlements(s);
-                const testCity = s[1254];
-                setCityTitle(testCity.שם_ישוב)
-                setResidents([
-                    testCity.גיל_0_5.toString(),
-                    testCity.גיל_6_18.toString(),
-                    testCity.גיל_19_45.toString(),
-                    testCity.גיל_46_55.toString(),
-                    testCity.גיל_56_64.toString(),
-                    testCity.גיל_65_פלוס.toString(),
-                ]);
-                console.log(`Total population at ${testCity.שם_ישוב} is ${testCity.סהכ}`);
-
-            })
+            .then((s: SettlementModel[]) => { setSettlements(s) })
             .catch((err: any) => console.log(err));
     }, []);
 
@@ -103,14 +89,29 @@ function GetStartedPage(): JSX.Element {
         <div className="GetStartedPage">
             <section className="intro-section">
                 <h1>Search Location:</h1>
+                <Autocomplete
+                    disablePortal
+                    id=""
+                    options={settlements.map(s => s.שם_ישוב)}
+                    sx={{ width: 250 }}
+                    renderInput={(params) => <TextField {...params} label="Location" />}
+                    onChange={(event, value) => {
+                        const userChosenSettlement = settlements.find(s => s.שם_ישוב === value);
+                        if (!value) {
+                            setResidents(['0', '0', '0', '0', '0', '0']);
+                            return
+                        };
+                        setResidents([
+                            userChosenSettlement.גיל_0_5.toString(),
+                            userChosenSettlement.גיל_6_18.toString(),
+                            userChosenSettlement.גיל_19_45.toString(),
+                            userChosenSettlement.גיל_46_55.toString(),
+                            userChosenSettlement.גיל_56_64.toString(),
+                            userChosenSettlement.גיל_65_פלוס.toString(),
+                        ]);
+                    }}
+                />
                 <form>
-                    {/* <Autocomplete
-                        disablePortal
-                        id=""
-                        options={['a', 'b', 'x']}
-                        sx={{ width: 300 }}
-                        renderInput={(params) => <TextField {...params} label="Movie" />}
-                    /> */}
                     this is form
                     <HashLink to={"#result"} smooth>any</HashLink>
                     <button type="button" onClick={() => setCollapse(!collapse)}>{collapse ? "close" : "open"}</button>
