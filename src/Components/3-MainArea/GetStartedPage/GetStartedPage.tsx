@@ -91,7 +91,7 @@ function GetStartedPage(): JSX.Element {
                                 userChosenSettlement.גיל_56_64.toString(),
                                 userChosenSettlement.גיל_65_פלוס.toString(),
                             ]);
-                            setChosenSettlement(userChosenSettlement)
+                            setChosenSettlement(userChosenSettlement);
                             setTimeout(() => {
                                 const resultcontainer = document.getElementById("result");
                                 resultcontainer.scrollIntoView({ behavior: "smooth" })
@@ -115,7 +115,7 @@ function GetStartedPage(): JSX.Element {
                             city.גיל_56_64.toString(),
                             city.גיל_65_פלוס.toString(),
                         ]);
-                        setCollapse(true);
+                        setChosenSettlement(city);
                         setTimeout(() => {
                             const resultcontainer = document.getElementById("result");
                             resultcontainer.scrollIntoView({ behavior: "smooth" })
@@ -139,7 +139,7 @@ function GetStartedPage(): JSX.Element {
                             city.גיל_56_64.toString(),
                             city.גיל_65_פלוס.toString(),
                         ]);
-                        setCollapse(true);
+                        setChosenSettlement(city);
                         setTimeout(() => {
                             const resultcontainer = document.getElementById("result");
                             resultcontainer.scrollIntoView({ behavior: "smooth" })
@@ -163,7 +163,7 @@ function GetStartedPage(): JSX.Element {
                             city.גיל_56_64.toString(),
                             city.גיל_65_פלוס.toString(),
                         ]);
-                        setCollapse(true);
+                        setChosenSettlement(city);
                         setTimeout(() => {
                             const resultcontainer = document.getElementById("result");
                             resultcontainer.scrollIntoView({ behavior: "smooth" })
@@ -187,7 +187,7 @@ function GetStartedPage(): JSX.Element {
                             city.גיל_56_64.toString(),
                             city.גיל_65_פלוס.toString(),
                         ]);
-                        setCollapse(true);
+                        setChosenSettlement(city);
                         setTimeout(() => {
                             const resultcontainer = document.getElementById("result");
                             resultcontainer.scrollIntoView({ behavior: "smooth" })
@@ -211,7 +211,7 @@ function GetStartedPage(): JSX.Element {
                             city.גיל_56_64.toString(),
                             city.גיל_65_פלוס.toString(),
                         ]);
-                        setCollapse(true);
+                        setChosenSettlement(city);
                         setTimeout(() => {
                             const resultcontainer = document.getElementById("result");
                             resultcontainer.scrollIntoView({ behavior: "smooth" })
@@ -235,7 +235,7 @@ function GetStartedPage(): JSX.Element {
                             city.גיל_56_64.toString(),
                             city.גיל_65_פלוס.toString(),
                         ]);
-                        setCollapse(true);
+                        setChosenSettlement(city);
                         setTimeout(() => {
                             const resultcontainer = document.getElementById("result");
                             resultcontainer.scrollIntoView({ behavior: "smooth" })
@@ -259,7 +259,7 @@ function GetStartedPage(): JSX.Element {
                             city.גיל_56_64.toString(),
                             city.גיל_65_פלוס.toString(),
                         ]);
-                        setCollapse(true);
+                        setChosenSettlement(city);
                         setTimeout(() => {
                             const resultcontainer = document.getElementById("result");
                             resultcontainer.scrollIntoView({ behavior: "smooth" })
@@ -283,7 +283,7 @@ function GetStartedPage(): JSX.Element {
                             city.גיל_56_64.toString(),
                             city.גיל_65_פלוס.toString(),
                         ]);
-                        setCollapse(true);
+                        setChosenSettlement(city);
                         setTimeout(() => {
                             const resultcontainer = document.getElementById("result");
                             resultcontainer.scrollIntoView({ behavior: "smooth" })
