@@ -18,6 +18,8 @@
 	}
 
 	.most-popular {
+		border-bottom: 0;
+
 		.display-most-popular {
 			display: flex;
 			flex-wrap: wrap;
@@ -49,13 +51,13 @@
 					transition: 200ms all;
 				}
 
-				span {
+				.spans {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					height: fit-content;
 					margin: 8px 0px;
-
-					&::after {
-						content: '';
-						border-bottom: 10px solid gray;
-					}
 				}
 
 				hr {
@@ -67,20 +69,47 @@
 		}
 	}
 
-	.result-sections {
-		width: 100%;
-		display: grid;
-		grid-template-columns: 50% 50%;
+	.spacer {
+		height: 45vh;
+		margin: 0px -100px;
+		overflow: hidden;
+		background-image: url('../../../assets/images/marbel.png');
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-bottom: 0;
+	}
 
-		>* {
+	.result-sections {
+		.title {
+			grid-column: span 2;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			h1 {
+				text-align: center;
+			}
+		}
+
+		width: 100%;
+		display: grid;
+		grid-template-columns: 50% 50%;
+		padding: 40px 0px;
+
+		.ReactCollapse--collapse,
+		.ReactCollapse--content {
+			grid-column: span 2 !important;
+		}
+
+		.ReactCollapse--content {
+			width: 50%;
+			display: flex;
+			justify-content: space-evenly;
 		}
 
 		.pie-container {
 			padding: 0px 150px;
 		}
-
 	}
 }

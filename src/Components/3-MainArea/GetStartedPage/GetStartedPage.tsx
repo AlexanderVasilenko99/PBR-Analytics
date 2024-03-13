@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./GetStartedPage.scss";
 import settlementServices from "../../../Services/SettlementServices";
 import SettlementModel from "../../../Models/SettlementModel";
-import { Collapse } from 'react-collapse';
 import { Bar, Pie } from 'react-chartjs-2';
 import { BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip, ArcElement } from 'chart.js';
 import TextField from '@mui/material/TextField';
@@ -11,9 +10,14 @@ import tlvImage from '../../../assets/images/tlv.jpg'
 import batyamImage from '../../../assets/images/batyam.jpg'
 import jerusalemImage from '../../../assets/images/jerusalem.jpg'
 import haifaImage from '../../../assets/images/haifa.png'
+import herzliyaImage from '../../../assets/images/herzlia.jpg'
+import petahtikvaImage from '../../../assets/images/petahtikva.jpg'
+import natanyaImage from '../../../assets/images/natanya.jpg'
+import rehovotImage from '../../../assets/images/rehovot.jpg'
 
 function GetStartedPage(): JSX.Element {
     const [settlements, setSettlements] = useState<SettlementModel[]>([]);
+    const [chosenSettlement, setChosenSettlement] = useState<SettlementModel>();
     const [collapse, setCollapse] = useState<boolean>(false);
     const [residents, setResidents] = useState<string[]>([]);
     const [cityTitle, setCityTitle] = useState<string>();
@@ -26,20 +30,20 @@ function GetStartedPage(): JSX.Element {
                 label: 'Residents',
                 data: residents,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
+                    '#FF7F50',
+                    '#FFD700',
+                    '#483D8B',
+                    '#20B2AA',
+                    '#FFA07A',
+                    '#5F9EA0',
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
+                    '#FF7F50',
+                    '#FFD700',
+                    '#483D8B',
+                    '#20B2AA',
+                    '#FFA07A',
+                    '#8B8D9D',
                 ],
                 borderWidth: 1,
             },
@@ -87,11 +91,13 @@ function GetStartedPage(): JSX.Element {
                                 userChosenSettlement.גיל_56_64.toString(),
                                 userChosenSettlement.גיל_65_פלוס.toString(),
                             ]);
-                            const resultcontainer = document.getElementById("result");
-                            resultcontainer.scrollIntoView({ behavior: "smooth" })
+                            setChosenSettlement(userChosenSettlement)
+                            setTimeout(() => {
+                                const resultcontainer = document.getElementById("result");
+                                resultcontainer.scrollIntoView({ behavior: "smooth" })
+                            }, 0);
                         }}
                     />
-                    <button type="button" onClick={() => setCollapse(!collapse)}>{collapse ? "close" : "open"}</button>
                 </div>
             </section>
 
@@ -109,11 +115,17 @@ function GetStartedPage(): JSX.Element {
                             city.גיל_56_64.toString(),
                             city.גיל_65_פלוס.toString(),
                         ]);
-                        const resultcontainer = document.getElementById("result");
-                        resultcontainer.scrollIntoView({ behavior: "smooth" })
+                        setCollapse(true);
+                        setTimeout(() => {
+                            const resultcontainer = document.getElementById("result");
+                            resultcontainer.scrollIntoView({ behavior: "smooth" })
+                        }, 0);
                     }}>
                         <img src={tlvImage} />
-                        <span>Tel Aviv</span>
+                        <div className="spans">
+                            <span>Tel Aviv</span>
+                            <span>תל אביב -יפו</span>
+                        </div>
                         <hr />
                     </div>
                     {/* bat yam */}
@@ -127,11 +139,17 @@ function GetStartedPage(): JSX.Element {
                             city.גיל_56_64.toString(),
                             city.גיל_65_פלוס.toString(),
                         ]);
-                        const resultcontainer = document.getElementById("result");
-                        resultcontainer.scrollIntoView({ behavior: "smooth" })
+                        setCollapse(true);
+                        setTimeout(() => {
+                            const resultcontainer = document.getElementById("result");
+                            resultcontainer.scrollIntoView({ behavior: "smooth" })
+                        }, 0);
                     }}>
                         <img src={batyamImage} />
-                        <span>Bat Yam</span>
+                        <div className="spans">
+                            <span>Bat Yam</span>
+                            <span>בת ים</span>
+                        </div>
                         <hr />
                     </div>
                     {/* jerusalem */}
@@ -145,11 +163,17 @@ function GetStartedPage(): JSX.Element {
                             city.גיל_56_64.toString(),
                             city.גיל_65_פלוס.toString(),
                         ]);
-                        const resultcontainer = document.getElementById("result");
-                        resultcontainer.scrollIntoView({ behavior: "smooth" })
+                        setCollapse(true);
+                        setTimeout(() => {
+                            const resultcontainer = document.getElementById("result");
+                            resultcontainer.scrollIntoView({ behavior: "smooth" })
+                        }, 0);
                     }}>
                         <img src={jerusalemImage} />
-                        <span>Jerusalem</span>
+                        <div className="spans">
+                            <span>Jerusalem</span>
+                            <span>ירושלים</span>
+                        </div>
                         <hr />
                     </div>
                     {/* haifa */}
@@ -163,22 +187,124 @@ function GetStartedPage(): JSX.Element {
                             city.גיל_56_64.toString(),
                             city.גיל_65_פלוס.toString(),
                         ]);
-                        const resultcontainer = document.getElementById("result");
-                        resultcontainer.scrollIntoView({ behavior: "smooth" })
+                        setCollapse(true);
+                        setTimeout(() => {
+                            const resultcontainer = document.getElementById("result");
+                            resultcontainer.scrollIntoView({ behavior: "smooth" })
+                        }, 0);
                     }}>
                         <img src={haifaImage} />
-                        <span>Haifa</span>
+                        <div className="spans">
+                            <span>Haifa</span>
+                            <span>חיפה</span>
+                        </div>
+                        <hr />
+                    </div>
+                    {/* Herzliya */}
+                    <div onClick={() => {
+                        const city = settlements.find(s => s.סמל_ישוב === 6400);
+                        setResidents([
+                            city.גיל_0_5.toString(),
+                            city.גיל_6_18.toString(),
+                            city.גיל_19_45.toString(),
+                            city.גיל_46_55.toString(),
+                            city.גיל_56_64.toString(),
+                            city.גיל_65_פלוס.toString(),
+                        ]);
+                        setCollapse(true);
+                        setTimeout(() => {
+                            const resultcontainer = document.getElementById("result");
+                            resultcontainer.scrollIntoView({ behavior: "smooth" })
+                        }, 0);
+                    }}>
+                        <img src={herzliyaImage} />
+                        <div className="spans">
+                            <span>Herzliya</span>
+                            <span>הרצליה</span>
+                        </div>
+                        <hr />
+                    </div>
+                    {/* natanya */}
+                    <div onClick={() => {
+                        const city = settlements.find(s => s.סמל_ישוב === 7400);
+                        setResidents([
+                            city.גיל_0_5.toString(),
+                            city.גיל_6_18.toString(),
+                            city.גיל_19_45.toString(),
+                            city.גיל_46_55.toString(),
+                            city.גיל_56_64.toString(),
+                            city.גיל_65_פלוס.toString(),
+                        ]);
+                        setCollapse(true);
+                        setTimeout(() => {
+                            const resultcontainer = document.getElementById("result");
+                            resultcontainer.scrollIntoView({ behavior: "smooth" })
+                        }, 0);
+                    }}>
+                        <img src={natanyaImage} />
+                        <div className="spans">
+                            <span>Natanya</span>
+                            <span>נתניה</span>
+                        </div>
+                        <hr />
+                    </div>
+                    {/* rehovot */}
+                    <div onClick={() => {
+                        const city = settlements.find(s => s.סמל_ישוב === 8400);
+                        setResidents([
+                            city.גיל_0_5.toString(),
+                            city.גיל_6_18.toString(),
+                            city.גיל_19_45.toString(),
+                            city.גיל_46_55.toString(),
+                            city.גיל_56_64.toString(),
+                            city.גיל_65_פלוס.toString(),
+                        ]);
+                        setCollapse(true);
+                        setTimeout(() => {
+                            const resultcontainer = document.getElementById("result");
+                            resultcontainer.scrollIntoView({ behavior: "smooth" })
+                        }, 0);
+                    }}>
+                        <img src={rehovotImage} />
+                        <div className="spans">
+                            <span>Rehovot</span>
+                            <span>רחובות</span>
+                        </div>
+                        <hr />
+                    </div>
+                    {/* petah tikva */}
+                    <div onClick={() => {
+                        const city = settlements.find(s => s.סמל_ישוב === 7900);
+                        setResidents([
+                            city.גיל_0_5.toString(),
+                            city.גיל_6_18.toString(),
+                            city.גיל_19_45.toString(),
+                            city.גיל_46_55.toString(),
+                            city.גיל_56_64.toString(),
+                            city.גיל_65_פלוס.toString(),
+                        ]);
+                        setCollapse(true);
+                        setTimeout(() => {
+                            const resultcontainer = document.getElementById("result");
+                            resultcontainer.scrollIntoView({ behavior: "smooth" })
+                        }, 0);
+                    }}>
+                        <img src={petahtikvaImage} />
+                        <div className="spans">
+                            <span>Petah Tikva</span>
+                            <span>פתח תקווה</span>
+                        </div>
                         <hr />
                     </div>
                 </div>
             </section>}
 
-            <section id="result" className="result-sections">
-                {/* <ul>
-                    {settlements.length > 1 && settlements?.map(s => <li key={s._id}>{s.שם_ישוב}</li>)}
-                </ul> */}
-                {/* <Collapse isOpened={collapse} > */}
+            <section className="spacer" />
 
+            <section id="result" className="result-sections">
+                <div className="title">
+                    <h1>Viewing {chosenSettlement?.שם_ישוב}</h1>
+                </div>
                 <div className="bar-container">
                     <Bar options={{
                         responsive: true,
@@ -195,7 +321,14 @@ function GetStartedPage(): JSX.Element {
                         datasets: [{
                             label: 'Residents',
                             data: residents,
-                            backgroundColor: 'maroon',
+                            backgroundColor: [
+                                '#FF7F50',
+                                '#FFD700',
+                                '#483D8B',
+                                '#20B2AA',
+                                '#FFA07A',
+                                '#5F9EA0'
+                            ],
                         }],
                     }} />
                 </div>
@@ -204,7 +337,6 @@ function GetStartedPage(): JSX.Element {
                     <Pie data={pieData} />
                 </div>
 
-                {/* </Collapse> */}
             </section>
         </div>
     );
