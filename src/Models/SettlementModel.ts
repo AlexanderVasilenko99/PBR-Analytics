@@ -4,7 +4,7 @@ class SettlementModel {
     public שם_ישוב: string;
     public מועצה_אזורית: string;
     public קוד_מועצה_אזורית: number;
-    public total: number;
+    public סהכ: number;
 
     // ages:
     public גיל_0_5: number;
