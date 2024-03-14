@@ -15,6 +15,25 @@
 		height: 200px;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+
+		h1 {
+			margin: auto 0px;
+		}
+
+		.autocompletes-container {
+			display: flex;
+			// margin: auto;
+			justify-content: flex-end;
+			align-items: center;
+
+			.MuiAutocomplete-root {
+				margin-left: 10px !important;
+
+				label {
+					color: grey !important;
+				}
+			}
+		}
 	}
 
 	.most-popular {

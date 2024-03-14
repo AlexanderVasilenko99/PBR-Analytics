@@ -18,8 +18,8 @@ import Table from "./Table/Table";
 
 function GetStartedPage(): JSX.Element {
     const [settlements, setSettlements] = useState<SettlementModel[]>([]);
-    const [chosenSettlement, setChosenSettlement] = useState<SettlementModel>();
-    const [collapse, setCollapse] = useState<boolean>(false);
+    const [chosenSettlement, setChosenSettlement] = useState<SettlementModel>(new SettlementModel());
+    // const [collapse, setCollapse] = useState<boolean>(false);
     const [residents, setResidents] = useState<string[]>([]);
     const [cityTitle, setCityTitle] = useState<string>();
     const labels = ['0-5', '6-18', '19-45', '46-55', '56-64', '65+'];
@@ -70,18 +70,48 @@ function GetStartedPage(): JSX.Element {
         <div className="GetStartedPage">
             <section className="intro-section">
                 <h1>Search Location:</h1>
-                <div>
-
+                <div className="autocompletes-container">
+                    {/* mui autocomplete by settlement id */}
+                    <Autocomplete
+                        disablePortal
+                        id=""
+                        options={settlements.map(s => s.סמל_ישוב.toString())}
+                        sx={{ width: 250 }}
+                        renderInput={(params) => <TextField {...params} label="קוד ישוב" />}
+                        onChange={(event, value) => {
+                            if (!value) {
+                                setResidents(['0', '0', '0', '0', '0', '0']);
+                                setChosenSettlement(new SettlementModel());
+                                return
+                            };
+                            const userChosenSettlement = settlements.find(s => s.סמל_ישוב.toString() === value.toString());
+                            setResidents([
+                                userChosenSettlement.גיל_0_5.toString(),
+                                userChosenSettlement.גיל_6_18.toString(),
+                                userChosenSettlement.גיל_19_45.toString(),
+                                userChosenSettlement.גיל_46_55.toString(),
+                                userChosenSettlement.גיל_56_64.toString(),
+                                userChosenSettlement.גיל_65_פלוס.toString(),
+                            ]);
+                            setChosenSettlement(userChosenSettlement);
+                            setTimeout(() => {
+                                const resultcontainer = document.getElementById("result");
+                                resultcontainer.scrollIntoView({ behavior: "smooth" })
+                            }, 0);
+                        }}
+                    />
+                    {/* mui autocomplete by settlement name */}
                     <Autocomplete
                         disablePortal
                         id=""
                         options={settlements.map(s => s.שם_ישוב)}
                         sx={{ width: 250 }}
-                        renderInput={(params) => <TextField {...params} label="Location" />}
+                        renderInput={(params) => <TextField {...params} label="שם ישוב" />}
                         onChange={(event, value) => {
                             const userChosenSettlement = settlements.find(s => s.שם_ישוב === value);
                             if (!value) {
                                 setResidents(['0', '0', '0', '0', '0', '0']);
+                                setChosenSettlement(new SettlementModel());
                                 return
                             };
                             setResidents([
@@ -319,7 +349,7 @@ function GetStartedPage(): JSX.Element {
                             legend: { position: 'top' as const },
                             title: {
                                 display: true,
-                                text: cityTitle,
+                                text: chosenSettlement.שם_ישוב,
                             }
                         }
                     }
