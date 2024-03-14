@@ -14,6 +14,7 @@ import herzliyaImage from '../../../assets/images/herzlia.jpg'
 import petahtikvaImage from '../../../assets/images/petahtikva.jpg'
 import natanyaImage from '../../../assets/images/natanya.jpg'
 import rehovotImage from '../../../assets/images/rehovot.jpg'
+import Table from "./Table/Table";
 
 function GetStartedPage(): JSX.Element {
     const [settlements, setSettlements] = useState<SettlementModel[]>([]);
@@ -304,7 +305,13 @@ function GetStartedPage(): JSX.Element {
             <section id="result" className="result-sections">
                 <div className="title">
                     <h1>Viewing {chosenSettlement?.שם_ישוב}</h1>
+                    <h2>Total residents: {chosenSettlement?.סהכ}</h2>
                 </div>
+
+                <div className="table-container">
+                    <Table {...chosenSettlement} />
+                </div>
+
                 <div className="bar-container">
                     <Bar options={{
                         responsive: true,

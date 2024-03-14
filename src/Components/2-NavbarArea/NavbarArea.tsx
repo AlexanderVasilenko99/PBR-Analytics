@@ -9,7 +9,7 @@ function NavbarArea(): JSX.Element {
             <li><NavLink to={appConfig.getStartedRoute}>Get Started!</NavLink></li>
             <li><NavLink to={appConfig.contactRoute}>Contact</NavLink></li>
             <li><NavLink to={appConfig.aboutRoute}>About</NavLink></li>
-            <li><NavLink to={'#'}>Language</NavLink></li>
+            {/* <li><NavLink to={'#'}>Language</NavLink></li> */}
         </ul>
     );
 }
