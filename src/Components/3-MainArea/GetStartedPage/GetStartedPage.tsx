@@ -21,7 +21,7 @@ function GetStartedPage(): JSX.Element {
     const [chosenSettlement, setChosenSettlement] = useState<SettlementModel>(new SettlementModel());
     // const [collapse, setCollapse] = useState<boolean>(false);
     const [residents, setResidents] = useState<string[]>([]);
-    const [cityTitle, setCityTitle] = useState<string>();
+    // const [cityTitle, setCityTitle] = useState<string>();
     const labels = ['0-5', '6-18', '19-45', '46-55', '56-64', '65+'];
 
     const pieData = {
@@ -79,6 +79,7 @@ function GetStartedPage(): JSX.Element {
                         sx={{ width: 250 }}
                         renderInput={(params) => <TextField {...params} label="קוד ישוב" />}
                         onChange={(event, value) => {
+                            console.log(event);
                             if (!value) {
                                 setResidents(['0', '0', '0', '0', '0', '0']);
                                 setChosenSettlement(new SettlementModel());
@@ -108,6 +109,7 @@ function GetStartedPage(): JSX.Element {
                         sx={{ width: 250 }}
                         renderInput={(params) => <TextField {...params} label="שם ישוב" />}
                         onChange={(event, value) => {
+                            console.log(event);
                             const userChosenSettlement = settlements.find(s => s.שם_ישוב === value);
                             if (!value) {
                                 setResidents(['0', '0', '0', '0', '0', '0']);
