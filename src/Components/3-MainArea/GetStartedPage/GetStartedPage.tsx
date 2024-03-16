@@ -68,7 +68,7 @@ function GetStartedPage(): JSX.Element {
 
     return (
         <div className="GetStartedPage">
-            <section className="intro-section">
+            <section className="intro-section" id="intro-section">
                 <h1>Search Location:</h1>
                 <div className="autocompletes-container">
                     {/* mui autocomplete by settlement id */}
@@ -332,9 +332,12 @@ function GetStartedPage(): JSX.Element {
 
             <section className="spacer" />
 
-            <section id="result" className="result-sections">
-                <div className="title">
-                    <h1>Viewing {chosenSettlement?.שם_ישוב}</h1>
+            <section id="" className="result-sections">
+                <div className="title" id="result">
+                    <h1>Viewing <span title="change" onClick={() => {
+                        document.getElementById("intro-section").scrollIntoView({ behavior: "smooth" })
+                    }}>{chosenSettlement?.שם_ישוב}</span>
+                    </h1>
                     <h2>Total residents: {chosenSettlement?.סהכ}</h2>
                 </div>
 
@@ -374,8 +377,8 @@ function GetStartedPage(): JSX.Element {
                     <Pie data={pieData} />
                 </div>
 
-            </section>
-        </div>
+            </section >
+        </div >
     );
 }
 

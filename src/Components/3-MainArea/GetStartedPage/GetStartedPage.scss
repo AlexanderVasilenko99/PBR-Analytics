@@ -92,7 +92,7 @@
 		height: 45vh;
 		margin: 0px -100px;
 		overflow: hidden;
-		background-image: url('../../../assets/images/marbel.png');
+		background-image: url('../../../assets/images/8.png');
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -122,6 +122,13 @@
 			h2 {
 				margin: 10px 0px 0px;
 				font-size: 1.2rem;
+			}
+
+			span {
+				&:hover {
+					cursor: pointer;
+					text-decoration: underline;
+				}
 			}
 		}
 
