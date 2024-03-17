@@ -10,6 +10,7 @@
         text-align: center;
         font-size: 1.2rem;
         padding: 4px;
+        background-color: var(--chart-color1);
 
 
         &.image-container-cell {
@@ -23,4 +24,44 @@
         }
     }
 
+    tbody:nth-of-type(2),
+    tbody:nth-of-type(3) {
+        td {
+            transition: 200ms;
+
+            &:nth-of-type(2) {
+                background-color: #FF7F50;
+            }
+
+            &:nth-of-type(3) {
+                background-color: #FFD700;
+            }
+
+            &:nth-of-type(4) {
+                background-color: #483D8B;
+                color: #E0E0E0;
+            }
+
+            &:nth-of-type(5) {
+                background-color: #20B2AA;
+            }
+
+            &:nth-of-type(6) {
+                background-color: #FFA07A;
+            }
+
+            &:nth-of-type(7) {
+                background-color: #5F9EA0;
+            }
+
+            &:hover {}
+        }
+    }
+
+    tbody:nth-of-type(3) {
+        td:nth-of-type(7) {
+            border-bottom-left-radius: 12px;
+        }
+
+    }
 }
