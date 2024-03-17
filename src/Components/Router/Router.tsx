@@ -18,6 +18,8 @@ function Router(): JSX.Element {
                 {/* Default Routes */}
                 <Route path="" element={<Navigate to={appConfig.homeRoute} />} />
                 <Route path="/PBR-Analytics/" element={<Navigate to={appConfig.homeRoute} />} />
+                <Route path="/PBR-Analytics/*" element={<Navigate to={appConfig.homeRoute} />} />
+                <Route path="/*" element={<Navigate to={appConfig.homeRoute} />} />
                 <Route path="/" element={<Navigate to={appConfig.homeRoute} />} />
                 <Route path="*" element={<Navigate to={appConfig.homeRoute} />} />
             </Routes>
