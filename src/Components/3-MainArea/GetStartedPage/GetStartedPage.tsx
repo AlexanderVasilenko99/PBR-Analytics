@@ -334,8 +334,8 @@ function GetStartedPage(): JSX.Element {
 
             <section className="spacer" />
 
-            <section id="" className="result-sections">
-                <div className="title" id="result">
+            <section id="result" className="result-sections">
+                <div className="title" id="">
                     <h1>Viewing <span title="change" onClick={() => {
                         document.getElementById("intro-section").scrollIntoView({ behavior: "smooth" })
                     }}>{chosenSettlement?.שם_ישוב}</span>
