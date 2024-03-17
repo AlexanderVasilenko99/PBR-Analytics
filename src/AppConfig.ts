@@ -1,5 +1,5 @@
 class AppConfig {
-    public readonly homeRoute = 'PBR-Analytics/';
+    public readonly homeRoute = '/PBR-Analytics/';
     public readonly contactRoute = this.homeRoute + 'contact';
     public readonly aboutRoute = this.homeRoute + 'about';
     public readonly getStartedRoute = this.homeRoute + 'get-started';
