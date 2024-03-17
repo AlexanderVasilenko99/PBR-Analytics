@@ -1,16 +1,14 @@
-import { useRef } from "react";
-import "./AboutPage.scss";
-import React from "react";
-import { NavLink } from "react-router-dom";
 import Tooltip from '@mui/material/Tooltip';
-import ContactInfoModel from "../../../Models/ContactInfoModel";
+import React, { useRef } from "react";
+import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import me_square from '../../../assets/images/me_square.jpeg';
+import cvicon from '../../../assets/images/cv.png';
+import emailicon from '../../../assets/images/emailicon.png';
 import giticon from '../../../assets/images/giticon.png';
 import linkedinicon from '../../../assets/images/linkedinicon.png';
+import me_square from '../../../assets/images/me_square.jpeg';
 import phoneicon from '../../../assets/images/phoneicon.png';
-import emailicon from '../../../assets/images/emailicon.png';
-import cvicon from '../../../assets/images/cv.png';
+import "./AboutPage.scss";
 function AboutPage(): JSX.Element {
 
     const isFirstScroll = useRef(true);
