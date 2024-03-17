@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
-import "./GetStartedPage.scss";
-import settlementServices from "../../../Services/SettlementServices";
-import SettlementModel from "../../../Models/SettlementModel";
-import { Bar, Pie } from 'react-chartjs-2';
-import { BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip, ArcElement } from 'chart.js';
-import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import tlvImage from '../../../assets/images/tlv.jpg'
-import batyamImage from '../../../assets/images/batyam.jpg'
-import jerusalemImage from '../../../assets/images/jerusalem.jpg'
-import haifaImage from '../../../assets/images/haifa.png'
-import herzliyaImage from '../../../assets/images/herzlia.jpg'
-import petahtikvaImage from '../../../assets/images/petahtikva.jpg'
-import natanyaImage from '../../../assets/images/natanya.jpg'
-import rehovotImage from '../../../assets/images/rehovot.jpg'
+import TextField from '@mui/material/TextField';
+import { ArcElement, BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip } from 'chart.js';
+import { useEffect, useState } from "react";
+import { Bar, Pie } from 'react-chartjs-2';
+import SettlementModel from "../../../Models/SettlementModel";
+import settlementServices from "../../../Services/SettlementServices";
+import batyamImage from '../../../assets/images/batyam.jpg';
+import haifaImage from '../../../assets/images/haifa.png';
+import herzliyaImage from '../../../assets/images/herzlia.jpg';
+import jerusalemImage from '../../../assets/images/jerusalem.jpg';
+import natanyaImage from '../../../assets/images/natanya.jpg';
+import petahtikvaImage from '../../../assets/images/petahtikva.jpg';
+import rehovotImage from '../../../assets/images/rehovot.jpg';
+import tlvImage from '../../../assets/images/tlv.jpg';
+import "./GetStartedPage.scss";
 import Table from "./Table/Table";
 
 function GetStartedPage(): JSX.Element {
