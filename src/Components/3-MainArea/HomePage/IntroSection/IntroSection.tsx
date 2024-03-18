@@ -1,6 +1,6 @@
-import "./IntroSection.scss";
 import logo from '../../../../assets/images/pbr-logo-xl.png';
 import GetStarted from "../../../Common/GetStarted/GetStarted";
+import "./IntroSection.scss";
 function IntroSection(): JSX.Element {
     return (
         <div className="IntroSection">
