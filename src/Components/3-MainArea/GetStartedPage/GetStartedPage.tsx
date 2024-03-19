@@ -15,13 +15,12 @@ import rehovotImage from '../../../assets/images/rehovot.jpg';
 import tlvImage from '../../../assets/images/tlv.jpg';
 import "./GetStartedPage.scss";
 import Table from "./Table/Table";
+import ComparisonTable from './ComparisonTable/ComparisonTable';
 
 function GetStartedPage(): JSX.Element {
     const [settlements, setSettlements] = useState<SettlementModel[]>([]);
     const [chosenSettlement, setChosenSettlement] = useState<SettlementModel>(new SettlementModel());
-    // const [collapse, setCollapse] = useState<boolean>(false);
     const [residents, setResidents] = useState<string[]>([]);
-    // const [cityTitle, setCityTitle] = useState<string>();
     const labels = ['0-5', '6-18', '19-45', '46-55', '56-64', '65+'];
 
     const pieData = {
@@ -133,7 +132,9 @@ function GetStartedPage(): JSX.Element {
                             }}
                         />
                     </div>
-                    <p>Compare 2 or more locations <span to={'#'}>Here</span></p>
+                    <p>Compare 2 or more locations <span onClick={() => {
+                        document.getElementById("comparison-section").scrollIntoView({ behavior: "smooth" })
+                    }}>Here</span></p>
                 </div>
             </section>
 
@@ -383,6 +384,10 @@ function GetStartedPage(): JSX.Element {
                 </div>
 
             </section >
+
+            <section className="comparison-section" id='comparison-section'>
+                {settlements && <ComparisonTable settlements={[settlements[1], settlements[2], settlements[3]]} />}
+            </section>
         </div >
     );
 }
