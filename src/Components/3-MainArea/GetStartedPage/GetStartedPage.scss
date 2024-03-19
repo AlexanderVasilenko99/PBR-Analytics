@@ -22,9 +22,29 @@
 
 		.autocompletes-container {
 			display: flex;
-			// margin: auto;
-			justify-content: flex-end;
+			flex-direction: column;
+			justify-content: center;
 			align-items: center;
+			position: relative;
+
+			>div {
+				display: flex;
+			}
+
+			>p {
+				margin: 0;
+				position: absolute;
+				bottom: 50px;
+				span{
+					transition: 150ms;
+					color: #231F20;
+					text-decoration: underline;
+					&:hover{
+						color: gray;
+						cursor: pointer;
+					}
+				}
+			}
 
 			.MuiAutocomplete-root {
 				margin-left: 10px !important;

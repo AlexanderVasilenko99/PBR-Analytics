@@ -72,65 +72,68 @@ function GetStartedPage(): JSX.Element {
                 <h1>Search Location:</h1>
                 <div className="autocompletes-container">
                     {/* mui autocomplete by settlement id */}
-                    <Autocomplete
-                        disablePortal
-                        id=""
-                        options={settlements.map(s => s.סמל_ישוב.toString())}
-                        sx={{ width: 250 }}
-                        renderInput={(params) => <TextField {...params} label="קוד ישוב" />}
-                        onChange={(event, value) => {
-                            console.log(event);
-                            if (!value) {
-                                setResidents(['0', '0', '0', '0', '0', '0']);
-                                setChosenSettlement(new SettlementModel());
-                                return
-                            };
-                            const userChosenSettlement = settlements.find(s => s.סמל_ישוב.toString() === value.toString());
-                            setResidents([
-                                userChosenSettlement.גיל_0_5.toString(),
-                                userChosenSettlement.גיל_6_18.toString(),
-                                userChosenSettlement.גיל_19_45.toString(),
-                                userChosenSettlement.גיל_46_55.toString(),
-                                userChosenSettlement.גיל_56_64.toString(),
-                                userChosenSettlement.גיל_65_פלוס.toString(),
-                            ]);
-                            setChosenSettlement(userChosenSettlement);
-                            setTimeout(() => {
-                                const resultcontainer = document.getElementById("result");
-                                resultcontainer.scrollIntoView({ behavior: "smooth" })
-                            }, 0);
-                        }}
-                    />
-                    {/* mui autocomplete by settlement name */}
-                    <Autocomplete
-                        disablePortal
-                        id=""
-                        options={settlements.map(s => s.שם_ישוב)}
-                        sx={{ width: 250 }}
-                        renderInput={(params) => <TextField {...params} label="שם ישוב" />}
-                        onChange={(event, value) => {
-                            console.log(event);
-                            const userChosenSettlement = settlements.find(s => s.שם_ישוב === value);
-                            if (!value) {
-                                setResidents(['0', '0', '0', '0', '0', '0']);
-                                setChosenSettlement(new SettlementModel());
-                                return
-                            };
-                            setResidents([
-                                userChosenSettlement.גיל_0_5.toString(),
-                                userChosenSettlement.גיל_6_18.toString(),
-                                userChosenSettlement.גיל_19_45.toString(),
-                                userChosenSettlement.גיל_46_55.toString(),
-                                userChosenSettlement.גיל_56_64.toString(),
-                                userChosenSettlement.גיל_65_פלוס.toString(),
-                            ]);
-                            setChosenSettlement(userChosenSettlement);
-                            setTimeout(() => {
-                                const resultcontainer = document.getElementById("result");
-                                resultcontainer.scrollIntoView({ behavior: "smooth" })
-                            }, 0);
-                        }}
-                    />
+                    <div>
+                        <Autocomplete
+                            disablePortal
+                            id=""
+                            options={settlements.map(s => s.סמל_ישוב.toString())}
+                            sx={{ width: 250 }}
+                            renderInput={(params) => <TextField {...params} label="קוד ישוב" />}
+                            onChange={(event, value) => {
+                                console.log(event);
+                                if (!value) {
+                                    setResidents(['0', '0', '0', '0', '0', '0']);
+                                    setChosenSettlement(new SettlementModel());
+                                    return
+                                };
+                                const userChosenSettlement = settlements.find(s => s.סמל_ישוב.toString() === value.toString());
+                                setResidents([
+                                    userChosenSettlement.גיל_0_5.toString(),
+                                    userChosenSettlement.גיל_6_18.toString(),
+                                    userChosenSettlement.גיל_19_45.toString(),
+                                    userChosenSettlement.גיל_46_55.toString(),
+                                    userChosenSettlement.גיל_56_64.toString(),
+                                    userChosenSettlement.גיל_65_פלוס.toString(),
+                                ]);
+                                setChosenSettlement(userChosenSettlement);
+                                setTimeout(() => {
+                                    const resultcontainer = document.getElementById("result");
+                                    resultcontainer.scrollIntoView({ behavior: "smooth" })
+                                }, 0);
+                            }}
+                        />
+                        {/* mui autocomplete by settlement name */}
+                        <Autocomplete
+                            disablePortal
+                            id=""
+                            options={settlements.map(s => s.שם_ישוב)}
+                            sx={{ width: 250 }}
+                            renderInput={(params) => <TextField {...params} label="שם ישוב" />}
+                            onChange={(event, value) => {
+                                console.log(event);
+                                const userChosenSettlement = settlements.find(s => s.שם_ישוב === value);
+                                if (!value) {
+                                    setResidents(['0', '0', '0', '0', '0', '0']);
+                                    setChosenSettlement(new SettlementModel());
+                                    return
+                                };
+                                setResidents([
+                                    userChosenSettlement.גיל_0_5.toString(),
+                                    userChosenSettlement.גיל_6_18.toString(),
+                                    userChosenSettlement.גיל_19_45.toString(),
+                                    userChosenSettlement.גיל_46_55.toString(),
+                                    userChosenSettlement.גיל_56_64.toString(),
+                                    userChosenSettlement.גיל_65_פלוס.toString(),
+                                ]);
+                                setChosenSettlement(userChosenSettlement);
+                                setTimeout(() => {
+                                    const resultcontainer = document.getElementById("result");
+                                    resultcontainer.scrollIntoView({ behavior: "smooth" })
+                                }, 0);
+                            }}
+                        />
+                    </div>
+                    <p>Compare 2 or more locations <span to={'#'}>Here</span></p>
                 </div>
             </section>
 
