@@ -35,11 +35,13 @@
 				margin: 0;
 				position: absolute;
 				bottom: 50px;
-				span{
+
+				span {
 					transition: 150ms;
 					color: #231F20;
 					text-decoration: underline;
-					&:hover{
+
+					&:hover {
 						color: gray;
 						cursor: pointer;
 					}
@@ -176,7 +178,21 @@
 		}
 	}
 
-	.comparison-section{
+	.comparison-section {
 		padding: 40px 0px;
+		text-align: center;
+		scroll-margin-top: 0;
+
+		.css-953pxc-MuiInputBase-root-MuiInput-root {
+			padding: 7px;
+
+			&::before {
+				border-bottom: 0 !important;
+			}
+
+			&:hover {
+				cursor: pointer !important;
+			}
+		}
 	}
 }

@@ -19,6 +19,7 @@ import ComparisonTable from './ComparisonTable/ComparisonTable';
 
 function GetStartedPage(): JSX.Element {
     const [settlements, setSettlements] = useState<SettlementModel[]>([]);
+    const [comparisonSettlements, setComparisonSettlements] = useState<SettlementModel[]>([]);
     const [chosenSettlement, setChosenSettlement] = useState<SettlementModel>(new SettlementModel());
     const [residents, setResidents] = useState<string[]>([]);
     const labels = ['0-5', '6-18', '19-45', '46-55', '56-64', '65+'];
@@ -386,7 +387,27 @@ function GetStartedPage(): JSX.Element {
             </section >
 
             <section className="comparison-section" id='comparison-section'>
-                {settlements && <ComparisonTable settlements={[settlements[1], settlements[2], settlements[3]]} />}
+                <h1>Compare Or Combine Locations</h1>
+                <Autocomplete
+                    multiple
+                    id="tags-standard"
+                    // sx={{ width: 500 }}
+                    options={settlements}
+                    getOptionLabel={(s) => s?.שם_ישוב}
+                    // defaultValue={null}
+                    renderInput={(params) => (
+                        <TextField
+                            {...params}
+                            variant="standard"
+                            label="Choose Locations Here"
+                            placeholder="Settlements"
+                        />
+                    )}
+                    onChange={(event, values: SettlementModel[]) => {
+                        setComparisonSettlements(values);
+                    }}
+                />
+                {settlements && <ComparisonTable settlements={comparisonSettlements} />}
             </section>
         </div >
     );

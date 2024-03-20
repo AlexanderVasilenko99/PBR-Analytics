@@ -12,6 +12,7 @@ function ComparisonTable(props: { settlements: SettlementModel[] }): JSX.Element
                 <tr>
                     <th>שם ישוב</th>
                     {x && x.map(s => <th key={s?.שם_ישוב}>{s?.שם_ישוב}</th>)}
+                    <th>סה"כ</th>
                 </tr>
             </thead>
                 <tbody>
@@ -30,30 +31,37 @@ function ComparisonTable(props: { settlements: SettlementModel[] }): JSX.Element
                     <tr>
                         <th>סה"כ תושבים</th>
                         {x && x.map(s => <td key={s?.סהכ}>{s?.סהכ}</td>)}
+                        <td>{x.reduce((accumulator, s) => accumulator + s.סהכ, 0)}</td>
                     </tr>
                     <tr>
                         <th>גילאי 0-5</th>
                         {x && x.map(s => <td key={s?.גיל_0_5}>{s?.גיל_0_5}</td>)}
+                        <td>{x.reduce((accumulator, s) => accumulator + s.גיל_0_5, 0)}</td>
                     </tr>
                     <tr>
                         <th>גילאי 6-18</th>
                         {x && x.map(s => <td key={s?.גיל_6_18}>{s?.גיל_6_18}</td>)}
+                        <td>{x.reduce((accumulator, s) => accumulator + s.גיל_6_18, 0)}</td>
                     </tr>
                     <tr>
                         <th>גילאי 19-45</th>
                         {x && x.map(s => <td key={s?.גיל_19_45}>{s?.גיל_19_45}</td>)}
+                        <td>{x.reduce((accumulator, s) => accumulator + s.גיל_19_45, 0)}</td>
                     </tr>
                     <tr>
                         <th>גילאי 46-55</th>
                         {x && x.map(s => <td key={s?.גיל_46_55}>{s?.גיל_46_55}</td>)}
+                        <td>{x.reduce((accumulator, s) => accumulator + s.גיל_46_55, 0)}</td>
                     </tr>
                     <tr>
                         <th>גילאי 56-64</th>
                         {x && x.map(s => <td key={s?.גיל_56_64}>{s?.גיל_56_64}</td>)}
+                        <td>{x.reduce((accumulator, s) => accumulator + s.גיל_56_64, 0)}</td>
                     </tr>
                     <tr>
                         <th>גילאי 65+</th>
                         {x && x.map(s => <td key={s?.גיל_65_פלוס}>{s?.גיל_65_פלוס}</td>)}
+                        <td>{x.reduce((accumulator, s) => accumulator + s.גיל_65_פלוס, 0)}</td>
                     </tr>
                     <tr>
                         <th>אחוז גילאי 0-5</th>

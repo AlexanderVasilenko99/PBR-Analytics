@@ -24,11 +24,12 @@
     }
 
     tbody {
-        th{
+        th {
             background-color: #E0E0E0;
             color: #231F20;
             width: 200px;
         }
+
         tr {
 
             &:nth-of-type(5),
@@ -63,11 +64,12 @@
             }
 
             &:nth-last-of-type(1) {
-                th{
+                th {
                     &:nth-of-type(1) {
                         border-bottom-right-radius: 12px;
                     }
                 }
+
                 td {
                     &:nth-last-child(1) {
                         border-bottom-left-radius: 12px;
