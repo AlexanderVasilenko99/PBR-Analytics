@@ -76,8 +76,7 @@ function AboutPage(): JSX.Element {
             <div className="about-grid-container" id="about-grid-container">
                 <div>
                     <h1>About Me</h1>
-                    <p>Hi again and welcome! My name is <span>Alexander Vasilenko</span> and I am a 24 year old student currently on my
-                        path to become a full stack developer.
+                    <p>Hi again and welcome! My name is <span>Alexander Vasilenko</span> and I am a full stack developer.
                         <br /><br />Besides studying and working, I spend most of my time constantly
                         learning new things, reading about new technologies and love exploring new fields. I am very into coding and
                         technology overall, a big fan of motorics who finds it very pleasing to work and wrench on motorcycles and
@@ -97,7 +96,7 @@ function AboutPage(): JSX.Element {
                 <div>
                     <h1>About This Project</h1><p>
 
-                        <span>Vasilenko Vacations</span> is my first full-scale full stack project, one of many web projects
+                        <span>PBR Analytics</span> is my first full-scale full stack project, one of many web projects
                         overall over the past few years, and my third and final project as part of my studies at John Bryce to
                         become a full stack web developer.
 
@@ -109,22 +108,9 @@ function AboutPage(): JSX.Element {
                         was thought through, written and implemented by yours truly, me.😁 <br />
 
                         I also put much effort into 'clean' coding aiming to avoid unnecessary repetition of code, correct file
-                        structuring and page responsiveness to mention a few.
+                        structuring and page responsiveness to mention a few.   
 
-                        <br /><br /><span>Backend - </span>
-                        the server side was written in <span>NodeJS</span> with the use of <span>Express
-                        </span> and structured according to best practice <span>REST API principals.</span>
-
-                        <br /><br /><span>Database - </span> the DB is relational. It contains multiple
-                        tables that are interconnected in one-one, one-many, and many-many relationships.
-
-                        <br /><br /><span>Security - </span>
-                        regarding <span>Security</span>, various steps were taken to implement various of secure coding and
-                        preventing various types of malicious safety exploitations. Namely, <span> preventing SQL injection,
-                            XXS attacks, IDOR attacks, using JWT, as well as hashing and salting sensitive information and
-                            much more.</span>
-
-                        <br /><br />As of January 2024, the website is still work in progress🙂</p><br />
+                        <br /><br />This Project was completed March 2024 and took a week of part-time work to complete.</p><br />
                 </div>
             </div>
         </div >
