@@ -134,7 +134,10 @@ function GetStartedPage(): JSX.Element {
                         />
                     </div>
                     <p>Compare 2 or more locations <span onClick={() => {
-                        document.getElementById("comparison-section").scrollIntoView({ behavior: "smooth" })
+                        document.getElementById("comparison-section").scrollIntoView({ behavior: "smooth" });
+                        setTimeout(() => {
+                            document.getElementById("tags-standard").focus();
+                        }, 900);
                     }}>Here</span></p>
                 </div>
             </section>
@@ -400,10 +403,11 @@ function GetStartedPage(): JSX.Element {
                             {...params}
                             variant="standard"
                             label="Choose Locations Here"
-                            placeholder="Settlements"
+                            placeholder="Locations"
                         />
                     )}
                     onChange={(event, values: SettlementModel[]) => {
+                        console.log(event);
                         setComparisonSettlements(values);
                     }}
                 />
