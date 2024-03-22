@@ -108,7 +108,7 @@ function AboutPage(): JSX.Element {
                         was thought through, written and implemented by yours truly, me.😁 <br />
 
                         I also put much effort into 'clean' coding aiming to avoid unnecessary repetition of code, correct file
-                        structuring and page responsiveness to mention a few.   
+                        structuring and page responsiveness to mention a few.
 
                         <br /><br />This Project was completed March 2024 and took a week of part-time work to complete.</p><br />
                 </div>
