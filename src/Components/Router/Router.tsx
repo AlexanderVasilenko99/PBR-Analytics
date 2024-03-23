@@ -2,9 +2,9 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import appConfig from "../../AppConfig";
 import AboutPage from "../3-MainArea/AboutPage/AboutPage";
 import ContactPage from "../3-MainArea/ContactPage/ContactPage";
+import GetStartedPage from "../3-MainArea/GetStartedPage/GetStartedPage";
 import HomePage from "../3-MainArea/HomePage/HomePage";
 import "./Router.scss";
-import GetStartedPage from "../3-MainArea/GetStartedPage/GetStartedPage";
 
 function Router(): JSX.Element {
     return (

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import "./GetStarted.scss";
 import appConfig from "../../../AppConfig";
+import "./GetStarted.scss";
 
 function GetStarted(): JSX.Element {
     return (
